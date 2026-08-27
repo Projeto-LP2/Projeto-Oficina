@@ -1,14 +1,14 @@
 package com.github.projetolp2.repository;
 
-import com.github.projetolp2.model.Veiculo;
+import java.util.List;
 
-public interface IPersistencia {
+public interface IPersistencia<T> {
     
-    boolean adicionar(Veiculo veiculo);
+    boolean adicionar(T objeto);
 
-    //List<Veiculo> consultar(String nomeConsulta);
+    List<T> consultar(String termo);
     
-    boolean alterar(Veiculo veiculo);
+    boolean alterar(T objeto);
     
     boolean excluir(int codigo);
 
