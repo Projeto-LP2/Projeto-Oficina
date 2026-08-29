@@ -6,7 +6,7 @@ public interface IPersistencia<T> {
     
     boolean adicionar(T objeto);
 
-    List<T> consultar(String termo);
+    List<T> consultar(String termo, String criterio);
     
     boolean alterar(T objeto);
     

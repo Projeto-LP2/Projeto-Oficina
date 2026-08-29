@@ -4,7 +4,7 @@
  */
 package com.github.projetolp2;
 
-import com.github.projetolp2.view.TelaPrincipal;
+import com.github.projetolp2.view.sdi.TelaPrincipalSDI;
 import com.github.projetolp2.view.TelaSobreSDI;
 
 import javax.swing.SwingUtilities;
@@ -18,7 +18,7 @@ public class MainSDI
     {
         SwingUtilities.invokeLater(() -> 
         {
-            TelaPrincipal tela = new TelaPrincipal();
+            TelaPrincipalSDI tela = new TelaPrincipalSDI();
             tela.setVisible(true);
         });
     }

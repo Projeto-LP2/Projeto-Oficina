@@ -2,20 +2,24 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package com.github.projetolp2.view;
+package com.github.projetolp2.view.sdi;
+
+import com.github.projetolp2.view.sdi.TelaConsultarSDI;
+import com.github.projetolp2.view.TelaSobreSDI;
+import com.github.projetolp2.view.sdi.TelaCadastroSDI;
 
 /**
  *
  * @author Guerreiro 3.0
  */
-public class TelaPrincipal extends javax.swing.JFrame {
+public class TelaPrincipalSDI extends javax.swing.JFrame {
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(TelaPrincipal.class.getName());
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(TelaPrincipalSDI.class.getName());
 
     /**
      * Creates new form TelaPrincipal
      */
-    public TelaPrincipal() {
+    public TelaPrincipalSDI() {
         initComponents();
     }
 
@@ -112,25 +116,22 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jMenuItem_Novo_Cadastro_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem_Novo_Cadastro_ActionPerformed
-    TelaCadastroSDI telaCadastro = new TelaCadastroSDI();
-    getContentPane().removeAll();
-    getContentPane().setLayout(new java.awt.BorderLayout()); 
-    getContentPane().add(telaCadastro, java.awt.BorderLayout.CENTER); 
-    revalidate();
-    repaint();
+        TelaCadastroSDI telaCadastro = new TelaCadastroSDI();
+        telaCadastro.setVisible(true);
     }//GEN-LAST:event_jMenuItem_Novo_Cadastro_ActionPerformed
 
     private void jMenu_SobreMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu_SobreMouseClicked
-    TelaSobreSDI telaSobre = new TelaSobreSDI();
-    getContentPane().removeAll();
-    getContentPane().setLayout(new java.awt.BorderLayout());
-    getContentPane().add(telaSobre, java.awt.BorderLayout.CENTER); 
-    revalidate();
-    repaint();
+        TelaSobreSDI telaSobre = new TelaSobreSDI();
+        getContentPane().removeAll();
+        getContentPane().setLayout(new java.awt.BorderLayout());
+        getContentPane().add(telaSobre, java.awt.BorderLayout.CENTER); 
+        revalidate();
+        repaint();
     }//GEN-LAST:event_jMenu_SobreMouseClicked
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-        // TODO add your handling code here:
+        TelaConsultarSDI telaConsultar = new TelaConsultarSDI();
+        telaConsultar.setVisible(true);
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     /**
@@ -155,7 +156,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new TelaPrincipal().setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new TelaPrincipalSDI().setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

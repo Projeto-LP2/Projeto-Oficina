@@ -28,15 +28,22 @@ public class TelaAlterar extends javax.swing.JPanel {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList<>();
+        jPanel_Superior = new javax.swing.JPanel();
+        jLabel_DigiteAqui_Alterar = new javax.swing.JLabel();
+        jRadioButton_ProprietarioAlterar = new javax.swing.JRadioButton();
+        jButton_PesquisaAlterar = new javax.swing.JButton();
         jLabel_PesquisarPor_Alterar = new javax.swing.JLabel();
         jRadioButton_PlacaAlterar = new javax.swing.JRadioButton();
         jRadioButton_ModeloAlterar = new javax.swing.JRadioButton();
-        jRadioButton_ProprietarioAlterar = new javax.swing.JRadioButton();
-        jLabel_DigiteAqui_Alterar = new javax.swing.JLabel();
         jTextField_CaixaTexto_Alterar = new javax.swing.JTextField();
-        jButton_PesquisaAlterar = new javax.swing.JButton();
         jScrollPane_TabelaAlterar = new javax.swing.JScrollPane();
         jTable_TabelaAlterar = new javax.swing.JTable();
+        jScrollPane_TabelaAlterar = new javax.swing.JScrollPane();
+        jTable_TabelaAlterar = new javax.swing.JTable();
+        jPanel_Dados = new javax.swing.JPanel();
+        jTextField_MarcaAlterar_Texto = new javax.swing.JTextField();
+        jLabel_AnoAlterar = new javax.swing.JLabel();
+        jTextField_AnoAlterar_Texto = new javax.swing.JTextField();
         jLabel_ProprietarioAlterar = new javax.swing.JLabel();
         jTextField_ProprietarioAlterar_Texto = new javax.swing.JTextField();
         jLabel_TelefoneAlterar = new javax.swing.JLabel();
@@ -46,13 +53,13 @@ public class TelaAlterar extends javax.swing.JPanel {
         jLabel_ModeloAlterar = new javax.swing.JLabel();
         jTextField_ModeloAlterar_Texto = new javax.swing.JTextField();
         jLabel_MarcaAlterar = new javax.swing.JLabel();
-        jTextField_MarcaAlterar_Texto = new javax.swing.JTextField();
-        jLabel_AnoAlterar = new javax.swing.JLabel();
-        jTextField_AnoAlterar_Texto = new javax.swing.JTextField();
+        jPanel_Inferior = new javax.swing.JPanel();
         jLabel_DescricaoAlterar = new javax.swing.JLabel();
         jScrollPane_DescricaoAlterar_Texto = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         jButton_Alterar = new javax.swing.JButton();
+        jScrollPane_DescricaoAlterar_Texto = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
 
         jList1.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -60,6 +67,14 @@ public class TelaAlterar extends javax.swing.JPanel {
             public String getElementAt(int i) { return strings[i]; }
         });
         jScrollPane1.setViewportView(jList1);
+
+        jLabel_DigiteAqui_Alterar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel_DigiteAqui_Alterar.setText("Digite aqui:");
+
+        jRadioButton_ProprietarioAlterar.setText("Proprietário");
+
+        jButton_PesquisaAlterar.setText("Pesquisar");
+        jButton_PesquisaAlterar.addActionListener(this::jButton_PesquisaAlterarActionPerformed);
 
         jLabel_PesquisarPor_Alterar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel_PesquisarPor_Alterar.setText("Pesquisar por:");
@@ -69,14 +84,6 @@ public class TelaAlterar extends javax.swing.JPanel {
 
         jRadioButton_ModeloAlterar.setText("Modelo");
         jRadioButton_ModeloAlterar.addActionListener(this::jRadioButton_ModeloAlterarActionPerformed);
-
-        jRadioButton_ProprietarioAlterar.setText("Proprietário");
-
-        jLabel_DigiteAqui_Alterar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel_DigiteAqui_Alterar.setText("Digite aqui:");
-
-        jButton_PesquisaAlterar.setText("Pesquisar");
-        jButton_PesquisaAlterar.addActionListener(this::jButton_PesquisaAlterarActionPerformed);
 
         jTable_TabelaAlterar.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -90,6 +97,71 @@ public class TelaAlterar extends javax.swing.JPanel {
             }
         ));
         jScrollPane_TabelaAlterar.setViewportView(jTable_TabelaAlterar);
+
+        jTable_TabelaAlterar.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Código", "Proprietário", "Telefone", "Placa", "Modelo", "Marca", "Ano", "Descrição"
+            }
+        ));
+        jScrollPane_TabelaAlterar.setViewportView(jTable_TabelaAlterar);
+
+        javax.swing.GroupLayout jPanel_SuperiorLayout = new javax.swing.GroupLayout(jPanel_Superior);
+        jPanel_Superior.setLayout(jPanel_SuperiorLayout);
+        jPanel_SuperiorLayout.setHorizontalGroup(
+            jPanel_SuperiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel_SuperiorLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel_SuperiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel_SuperiorLayout.createSequentialGroup()
+                        .addGroup(jPanel_SuperiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel_SuperiorLayout.createSequentialGroup()
+                                .addComponent(jLabel_DigiteAqui_Alterar)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jTextField_CaixaTexto_Alterar))
+                            .addGroup(jPanel_SuperiorLayout.createSequentialGroup()
+                                .addComponent(jLabel_PesquisarPor_Alterar)
+                                .addGap(18, 18, 18)
+                                .addComponent(jRadioButton_PlacaAlterar)
+                                .addGap(32, 32, 32)
+                                .addComponent(jRadioButton_ModeloAlterar)
+                                .addGap(29, 29, 29)
+                                .addComponent(jRadioButton_ProprietarioAlterar)))
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton_PesquisaAlterar, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane_TabelaAlterar))
+                .addContainerGap())
+        );
+        jPanel_SuperiorLayout.setVerticalGroup(
+            jPanel_SuperiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel_SuperiorLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel_SuperiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel_PesquisarPor_Alterar)
+                    .addComponent(jRadioButton_PlacaAlterar)
+                    .addComponent(jRadioButton_ModeloAlterar)
+                    .addComponent(jRadioButton_ProprietarioAlterar))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel_SuperiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel_DigiteAqui_Alterar)
+                    .addComponent(jTextField_CaixaTexto_Alterar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton_PesquisaAlterar, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane_TabelaAlterar, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        jTextField_MarcaAlterar_Texto.addActionListener(this::jTextField_MarcaAlterar_TextoActionPerformed);
+
+        jLabel_AnoAlterar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel_AnoAlterar.setText("Ano");
+
+        jTextField_AnoAlterar_Texto.addActionListener(this::jTextField_AnoAlterar_TextoActionPerformed);
 
         jLabel_ProprietarioAlterar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel_ProprietarioAlterar.setText("Proprietario");
@@ -108,12 +180,66 @@ public class TelaAlterar extends javax.swing.JPanel {
         jLabel_MarcaAlterar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel_MarcaAlterar.setText("Marca");
 
-        jTextField_MarcaAlterar_Texto.addActionListener(this::jTextField_MarcaAlterar_TextoActionPerformed);
-
-        jLabel_AnoAlterar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel_AnoAlterar.setText("Ano");
-
-        jTextField_AnoAlterar_Texto.addActionListener(this::jTextField_AnoAlterar_TextoActionPerformed);
+        javax.swing.GroupLayout jPanel_DadosLayout = new javax.swing.GroupLayout(jPanel_Dados);
+        jPanel_Dados.setLayout(jPanel_DadosLayout);
+        jPanel_DadosLayout.setHorizontalGroup(
+            jPanel_DadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel_DadosLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel_DadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel_DadosLayout.createSequentialGroup()
+                        .addGroup(jPanel_DadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextField_ProprietarioAlterar_Texto, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel_DadosLayout.createSequentialGroup()
+                                .addGroup(jPanel_DadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel_PlacaAlterar)
+                                    .addComponent(jTextField_PlacaAlterar_Texto, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(26, 26, 26)
+                                .addGroup(jPanel_DadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel_ModeloAlterar)
+                                    .addComponent(jTextField_ModeloAlterar_Texto, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 85, Short.MAX_VALUE)
+                        .addGroup(jPanel_DadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel_TelefoneAlterar)
+                            .addComponent(jTextField_TelefoneAlterar_Texto, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel_DadosLayout.createSequentialGroup()
+                                .addGroup(jPanel_DadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel_MarcaAlterar)
+                                    .addComponent(jTextField_MarcaAlterar_Texto, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(jPanel_DadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jTextField_AnoAlterar_Texto, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel_AnoAlterar)))))
+                    .addGroup(jPanel_DadosLayout.createSequentialGroup()
+                        .addComponent(jLabel_ProprietarioAlterar)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        jPanel_DadosLayout.setVerticalGroup(
+            jPanel_DadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel_DadosLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel_DadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel_ProprietarioAlterar)
+                    .addComponent(jLabel_TelefoneAlterar))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel_DadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextField_ProprietarioAlterar_Texto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField_TelefoneAlterar_Texto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel_DadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel_PlacaAlterar)
+                    .addComponent(jLabel_ModeloAlterar)
+                    .addComponent(jLabel_MarcaAlterar)
+                    .addComponent(jLabel_AnoAlterar))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel_DadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextField_PlacaAlterar_Texto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField_ModeloAlterar_Texto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField_MarcaAlterar_Texto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField_AnoAlterar_Texto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
+        );
 
         jLabel_DescricaoAlterar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel_DescricaoAlterar.setText("Descrição");
@@ -125,6 +251,39 @@ public class TelaAlterar extends javax.swing.JPanel {
         jButton_Alterar.setText("Alterar");
         jButton_Alterar.addActionListener(this::jButton_AlterarActionPerformed);
 
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane_DescricaoAlterar_Texto.setViewportView(jTextArea1);
+
+        javax.swing.GroupLayout jPanel_InferiorLayout = new javax.swing.GroupLayout(jPanel_Inferior);
+        jPanel_Inferior.setLayout(jPanel_InferiorLayout);
+        jPanel_InferiorLayout.setHorizontalGroup(
+            jPanel_InferiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel_InferiorLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel_InferiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel_InferiorLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 584, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButton_Alterar, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(12, 12, 12))
+                    .addComponent(jScrollPane_DescricaoAlterar_Texto)
+                    .addGroup(jPanel_InferiorLayout.createSequentialGroup()
+                        .addComponent(jLabel_DescricaoAlterar)
+                        .addGap(0, 1086, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        jPanel_InferiorLayout.setVerticalGroup(
+            jPanel_InferiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel_InferiorLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel_DescricaoAlterar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane_DescricaoAlterar_Texto, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton_Alterar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -132,105 +291,20 @@ public class TelaAlterar extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane_DescricaoAlterar_Texto)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel_DigiteAqui_Alterar)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField_CaixaTexto_Alterar))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel_PesquisarPor_Alterar)
-                                .addGap(18, 18, 18)
-                                .addComponent(jRadioButton_PlacaAlterar)
-                                .addGap(32, 32, 32)
-                                .addComponent(jRadioButton_ModeloAlterar)
-                                .addGap(29, 29, 29)
-                                .addComponent(jRadioButton_ProprietarioAlterar)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton_PesquisaAlterar, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane_TabelaAlterar)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextField_ProprietarioAlterar_Texto, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel_PlacaAlterar)
-                                    .addComponent(jTextField_PlacaAlterar_Texto, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(26, 26, 26)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel_ModeloAlterar)
-                                        .addGap(0, 0, Short.MAX_VALUE))
-                                    .addComponent(jTextField_ModeloAlterar_Texto))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 97, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel_TelefoneAlterar)
-                            .addComponent(jTextField_TelefoneAlterar_Texto, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel_MarcaAlterar)
-                                    .addComponent(jTextField_MarcaAlterar_Texto, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jTextField_AnoAlterar_Texto)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel_AnoAlterar)
-                                        .addGap(111, 111, 111))))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel_ProprietarioAlterar)
-                            .addComponent(jLabel_DescricaoAlterar))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                    .addComponent(jPanel_Superior, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel_Dados, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel_Inferior, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton_Alterar, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel_PesquisarPor_Alterar)
-                    .addComponent(jRadioButton_PlacaAlterar)
-                    .addComponent(jRadioButton_ModeloAlterar)
-                    .addComponent(jRadioButton_ProprietarioAlterar))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel_DigiteAqui_Alterar)
-                    .addComponent(jTextField_CaixaTexto_Alterar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton_PesquisaAlterar, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane_TabelaAlterar, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel_Superior, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel_ProprietarioAlterar)
-                    .addComponent(jLabel_TelefoneAlterar))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField_ProprietarioAlterar_Texto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField_TelefoneAlterar_Texto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel_PlacaAlterar)
-                    .addComponent(jLabel_ModeloAlterar)
-                    .addComponent(jLabel_MarcaAlterar)
-                    .addComponent(jLabel_AnoAlterar))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField_PlacaAlterar_Texto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField_ModeloAlterar_Texto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField_MarcaAlterar_Texto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField_AnoAlterar_Texto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jPanel_Dados, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel_DescricaoAlterar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane_DescricaoAlterar_Texto, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton_Alterar, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+                .addComponent(jPanel_Inferior, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -309,6 +383,9 @@ public class TelaAlterar extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel_ProprietarioAlterar;
     private javax.swing.JLabel jLabel_TelefoneAlterar;
     private javax.swing.JList<String> jList1;
+    private javax.swing.JPanel jPanel_Dados;
+    private javax.swing.JPanel jPanel_Inferior;
+    private javax.swing.JPanel jPanel_Superior;
     private javax.swing.JRadioButton jRadioButton_ModeloAlterar;
     private javax.swing.JRadioButton jRadioButton_PlacaAlterar;
     private javax.swing.JRadioButton jRadioButton_ProprietarioAlterar;
