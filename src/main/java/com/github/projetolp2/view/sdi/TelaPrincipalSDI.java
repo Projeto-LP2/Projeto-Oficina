@@ -4,10 +4,6 @@
  */
 package com.github.projetolp2.view.sdi;
 
-import com.github.projetolp2.view.sdi.TelaConsultarSDI;
-import com.github.projetolp2.view.TelaSobreSDI;
-import com.github.projetolp2.view.sdi.TelaCadastroSDI;
-
 /**
  *
  * @author Guerreiro 3.0
@@ -37,13 +33,12 @@ public class TelaPrincipalSDI extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jMenuBar_TelaPrincipal = new javax.swing.JMenuBar();
         jMenu_Arquivo = new javax.swing.JMenu();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenuItem4 = new javax.swing.JMenuItem();
+        jMenuItem_Consultar = new javax.swing.JMenuItem();
+        jMenuItem_Cadastrar = new javax.swing.JMenuItem();
         jMenu_Sobre = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Tela Principal");
 
         jLabel_Sistema_De_Cadastro.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel_Sistema_De_Cadastro.setText("SISTEMA DE CADASTRO ");
@@ -75,19 +70,13 @@ public class TelaPrincipalSDI extends javax.swing.JFrame {
 
         jMenu_Arquivo.setText("Arquivo");
 
-        jMenuItem2.setText("Consultar Cadastros");
-        jMenuItem2.addActionListener(this::jMenuItem2ActionPerformed);
-        jMenu_Arquivo.add(jMenuItem2);
+        jMenuItem_Consultar.setText("Consultar Cadastros");
+        jMenuItem_Consultar.addActionListener(this::jMenuItem_ConsultarActionPerformed);
+        jMenu_Arquivo.add(jMenuItem_Consultar);
 
-        jMenuItem1.setText("Novo cadastro");
-        jMenuItem1.addActionListener(this::jMenuItem_Novo_Cadastro_ActionPerformed);
-        jMenu_Arquivo.add(jMenuItem1);
-
-        jMenuItem3.setText("Alterar Cadastro");
-        jMenu_Arquivo.add(jMenuItem3);
-
-        jMenuItem4.setText("Excluir Cadastro");
-        jMenu_Arquivo.add(jMenuItem4);
+        jMenuItem_Cadastrar.setText("Novo cadastro");
+        jMenuItem_Cadastrar.addActionListener(this::jMenuItem_Novo_Cadastro_ActionPerformed);
+        jMenu_Arquivo.add(jMenuItem_Cadastrar);
 
         jMenuBar_TelaPrincipal.add(jMenu_Arquivo);
 
@@ -121,18 +110,19 @@ public class TelaPrincipalSDI extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem_Novo_Cadastro_ActionPerformed
 
     private void jMenu_SobreMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu_SobreMouseClicked
+        /* Tela sobre deve ser criada aq
         TelaSobreSDI telaSobre = new TelaSobreSDI();
         getContentPane().removeAll();
         getContentPane().setLayout(new java.awt.BorderLayout());
         getContentPane().add(telaSobre, java.awt.BorderLayout.CENTER); 
         revalidate();
-        repaint();
+        repaint();*/
     }//GEN-LAST:event_jMenu_SobreMouseClicked
 
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+    private void jMenuItem_ConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem_ConsultarActionPerformed
         TelaConsultarSDI telaConsultar = new TelaConsultarSDI();
         telaConsultar.setVisible(true);
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
+    }//GEN-LAST:event_jMenuItem_ConsultarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -163,10 +153,8 @@ public class TelaPrincipalSDI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel_Sistema_De_Cadastro;
     private javax.swing.JMenuBar jMenuBar_TelaPrincipal;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
+    private javax.swing.JMenuItem jMenuItem_Cadastrar;
+    private javax.swing.JMenuItem jMenuItem_Consultar;
     private javax.swing.JMenu jMenu_Arquivo;
     private javax.swing.JMenu jMenu_Sobre;
     private javax.swing.JPanel jPanel_TelaPrincipal;

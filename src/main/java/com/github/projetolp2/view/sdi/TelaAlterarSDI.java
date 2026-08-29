@@ -67,6 +67,7 @@ public class TelaAlterarSDI extends javax.swing.JFrame {
         jButton_Salvar1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Tela Alterar");
 
         jLabel_Ano1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel_Ano1.setText("Ano:");

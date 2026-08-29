@@ -26,6 +26,7 @@ public class TelaConsultarSDI extends javax.swing.JFrame {
     public TelaConsultarSDI() {
         initComponents();
         configurarTabela();
+        configurarSelecaoTabela();
     }
 
     /**
@@ -37,11 +38,13 @@ public class TelaConsultarSDI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup_Selecionar = new javax.swing.ButtonGroup();
         jPanel_Criterio = new javax.swing.JPanel();
         jRadioButton_Modelo = new javax.swing.JRadioButton();
         jRadioButton_Proprietario = new javax.swing.JRadioButton();
         jLabel_PesquisarPor = new javax.swing.JLabel();
         jRadioButton_Placa = new javax.swing.JRadioButton();
+        jRadioButton_Codigo = new javax.swing.JRadioButton();
         jPanel_Termo = new javax.swing.JPanel();
         jButton_Pesquisar = new javax.swing.JButton();
         jLabel_DigiteAqui = new javax.swing.JLabel();
@@ -58,15 +61,22 @@ public class TelaConsultarSDI extends javax.swing.JFrame {
         jButton_Alterar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Tela Consulta");
 
+        buttonGroup_Selecionar.add(jRadioButton_Modelo);
         jRadioButton_Modelo.setText("Modelo");
 
+        buttonGroup_Selecionar.add(jRadioButton_Proprietario);
         jRadioButton_Proprietario.setText("Proprietário");
 
         jLabel_PesquisarPor.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel_PesquisarPor.setText("Pesquisar por:");
 
+        buttonGroup_Selecionar.add(jRadioButton_Placa);
         jRadioButton_Placa.setText("Placa");
+
+        buttonGroup_Selecionar.add(jRadioButton_Codigo);
+        jRadioButton_Codigo.setText("Código");
 
         javax.swing.GroupLayout jPanel_CriterioLayout = new javax.swing.GroupLayout(jPanel_Criterio);
         jPanel_Criterio.setLayout(jPanel_CriterioLayout);
@@ -75,9 +85,11 @@ public class TelaConsultarSDI extends javax.swing.JFrame {
             .addGroup(jPanel_CriterioLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel_PesquisarPor)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jRadioButton_Placa)
+                .addGap(12, 12, 12)
+                .addComponent(jRadioButton_Codigo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jRadioButton_Placa)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jRadioButton_Modelo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jRadioButton_Proprietario)
@@ -90,7 +102,8 @@ public class TelaConsultarSDI extends javax.swing.JFrame {
                     .addComponent(jLabel_PesquisarPor)
                     .addComponent(jRadioButton_Placa)
                     .addComponent(jRadioButton_Modelo)
-                    .addComponent(jRadioButton_Proprietario))
+                    .addComponent(jRadioButton_Proprietario)
+                    .addComponent(jRadioButton_Codigo))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -137,6 +150,7 @@ public class TelaConsultarSDI extends javax.swing.JFrame {
         ));
         jScrollPane_Tabela.setViewportView(jTable_Tabela);
 
+        jTextArea_Descricao_Consulta.setEditable(false);
         jTextArea_Descricao_Consulta.setColumns(20);
         jTextArea_Descricao_Consulta.setLineWrap(true);
         jTextArea_Descricao_Consulta.setRows(5);
@@ -160,7 +174,7 @@ public class TelaConsultarSDI extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel_Descricao, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane_Descricao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane_Descricao, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -184,6 +198,7 @@ public class TelaConsultarSDI extends javax.swing.JFrame {
         );
 
         jButton_Excluir.setText("Excluir");
+        jButton_Excluir.addActionListener(this::jButton_ExcluirActionPerformed);
 
         jButton_Alterar.setText("Alterar");
         jButton_Alterar.addActionListener(this::jButton_AlterarActionPerformed);
@@ -252,6 +267,8 @@ public class TelaConsultarSDI extends javax.swing.JFrame {
             criterio = "modelo";
         } else if (jRadioButton_Proprietario.isSelected()) {
             criterio = "proprietario";
+        } else if (jRadioButton_Codigo.isSelected()) {
+            criterio = "codigo";
         } else {
             JOptionPane.showMessageDialog(this, "Selecione um critério de busca.");
             return;
@@ -263,8 +280,7 @@ public class TelaConsultarSDI extends javax.swing.JFrame {
         modelo.setRowCount(0);
 
         if (resultado.isEmpty()) {
-            //Mesma coisa para alertar se não achou nada
-            //JOptionPane.showMessageDialog(this, "Nenhum veículo encontrado.");
+            JOptionPane.showMessageDialog(this, "Nenhum veículo encontrado.\nVerifique a busca");
             return;
         }
 
@@ -309,6 +325,32 @@ public class TelaConsultarSDI extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jButton_AlterarActionPerformed
 
+    private void jButton_ExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_ExcluirActionPerformed
+        //Cria a tela de exlcuir
+        int linhaSelecionada = jTable_Tabela.getSelectedRow();
+
+        if (linhaSelecionada == -1) {
+            JOptionPane.showMessageDialog(this, "Selecione um veículo na tabela.");
+            return;
+        }
+        
+        DefaultTableModel modelo = (DefaultTableModel) jTable_Tabela.getModel();
+
+        Veiculo veiculo = new Veiculo(
+            (int) modelo.getValueAt(linhaSelecionada, 0),
+            (String) modelo.getValueAt(linhaSelecionada, 3),
+            (String) modelo.getValueAt(linhaSelecionada, 4),
+            (String) modelo.getValueAt(linhaSelecionada, 5),
+            (int) modelo.getValueAt(linhaSelecionada, 6),
+            (String) modelo.getValueAt(linhaSelecionada, 1),
+            (String) modelo.getValueAt(linhaSelecionada, 2),
+            (String) modelo.getValueAt(linhaSelecionada, 7)
+        );
+
+        TelaExcluirSDI telaExcluir = new TelaExcluirSDI(veiculo);
+        telaExcluir.setVisible(true);
+    }//GEN-LAST:event_jButton_ExcluirActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -334,6 +376,7 @@ public class TelaConsultarSDI extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(() -> new TelaConsultarSDI().setVisible(true));
     }
     
+    //Praticamente pega a tabela e torna ela impossível de ser editada
     private void configurarTabela() {
         DefaultTableModel modeloAtual = (DefaultTableModel) jTable_Tabela.getModel();
 
@@ -348,8 +391,21 @@ public class TelaConsultarSDI extends javax.swing.JFrame {
 
         jTable_Tabela.setModel(modeloNaoEditavel);
     }
+    
+    private void configurarSelecaoTabela() {
+        jTable_Tabela.getSelectionModel().addListSelectionListener(evt -> {
+            int linhaSelecionada = jTable_Tabela.getSelectedRow();
+            if (linhaSelecionada != -1) {
+                DefaultTableModel modelo = (DefaultTableModel) jTable_Tabela.getModel();
+                jTextArea_Descricao_Consulta.setText(
+                    (String) modelo.getValueAt(linhaSelecionada, 7)
+                );
+            }
+        });
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup buttonGroup_Selecionar;
     private javax.swing.JButton jButton_Alterar;
     private javax.swing.JButton jButton_Excluir;
     private javax.swing.JButton jButton_Pesquisar;
@@ -361,6 +417,7 @@ public class TelaConsultarSDI extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel_Descricao;
     private javax.swing.JPanel jPanel_Tabela;
     private javax.swing.JPanel jPanel_Termo;
+    private javax.swing.JRadioButton jRadioButton_Codigo;
     private javax.swing.JRadioButton jRadioButton_Modelo;
     private javax.swing.JRadioButton jRadioButton_Placa;
     private javax.swing.JRadioButton jRadioButton_Proprietario;

@@ -53,32 +53,42 @@ public class VeiculoRepository implements IPersistencia<Veiculo> {
     @Override
     public List<Veiculo> consultar(String termo, String criterio) {
         List<Veiculo> veiculos = new ArrayList<>();
+        Connection con = Conexao.getConexao();
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+
+        String sql;
+        boolean buscaPorCodigo = criterio.equals("codigo");
 
         //Criterio se é placa, modelo e proprietario
-        String coluna;
         switch (criterio) {
             case "placa":
-                coluna = "placa";
-                break;
             case "modelo":
-                coluna = "modelo";
-                break;
             case "proprietario":
-                coluna = "proprietario";
+                sql = "SELECT * FROM veiculo WHERE " + criterio + " ILIKE ?";
+                break;
+            case "codigo":
+                sql = "SELECT * FROM veiculo WHERE codigo = ?";
                 break;
             default:
                 throw new IllegalArgumentException("Critério de busca inválido: " + criterio);
         }
 
-        String sql = "SELECT * FROM veiculo WHERE " + coluna + " ILIKE ?";
-
-        Connection con = Conexao.getConexao();
-        PreparedStatement stmt = null;
-        ResultSet rs = null;
-
         try {
             stmt = con.prepareStatement(sql);
-            stmt.setString(1, "%" + termo + "%");
+
+            //Verificando se é pra buscar por codigo
+            if (buscaPorCodigo) {
+                stmt.setInt(1, Integer.parseInt(termo.trim()));
+            } else {
+                //Se tiver vazio foi pq não digitou nada
+                if(termo.isBlank()) {
+                    //Para a execução do try e ja vai retornar a lista vazia
+                    //A lista vazia vai ser pego no front e vai mostrar o "erro"
+                    throw new IllegalArgumentException();
+                }
+                stmt.setString(1, "%" + termo + "%");
+            }
 
             rs = stmt.executeQuery();
 
@@ -96,6 +106,10 @@ public class VeiculoRepository implements IPersistencia<Veiculo> {
                 );
                 veiculos.add(veiculo);
             }
+        } catch (NumberFormatException e) {
+            System.err.println("Código inválido: " + termo);
+        } catch (IllegalArgumentException e) {
+            System.err.println("O termo esta vazio.");
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {

@@ -4,8 +4,8 @@
  */
 package com.github.projetolp2;
 
+import com.github.projetolp2.util.DatabaseSetup;
 import com.github.projetolp2.view.sdi.TelaPrincipalSDI;
-import com.github.projetolp2.view.TelaSobreSDI;
 
 import javax.swing.SwingUtilities;
 /**
@@ -16,8 +16,9 @@ public class MainSDI
 {
     public static void main(String[] args)
     {
-        SwingUtilities.invokeLater(() -> 
-        {
+        DatabaseSetup.criarTabela();
+
+        SwingUtilities.invokeLater(() -> {
             TelaPrincipalSDI tela = new TelaPrincipalSDI();
             tela.setVisible(true);
         });
