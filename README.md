@@ -1,7 +1,9 @@
 # Sistema de Oficina Mecânica
 Sistema desenvolvido em **Java Swing** para gerenciamento de veículos de uma oficina mecânica.
 Projeto desenvolvido para a disciplina de **Linguagem de Programação II (LP2)**.
+
 **Cenário:** Oficina Mecânica
+
 **Ano:** 2026
 
 ## Funcionalidades
