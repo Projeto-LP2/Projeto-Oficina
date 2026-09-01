@@ -32,7 +32,7 @@ Projeto desenvolvido para a disciplina de **Linguagem de Programação II (LP2)*
 ## Tecnologias
 * Java
 * Java Swing
-* Banco de dados
+* PostgreSQL 
   
 ## Integrantes
 * **Breno Souza**
