@@ -39,7 +39,7 @@ Projeto desenvolvido para a disciplina de **Linguagem de Programação II (LP2)*
 * **Caio Simão**
 * **Cleyton Ferreira**
 * **Hitaro Ramos**
-* **Ricado Roque**
+* **Ricardo Roque**
 
 ## Configuração do Banco de Dados
 
