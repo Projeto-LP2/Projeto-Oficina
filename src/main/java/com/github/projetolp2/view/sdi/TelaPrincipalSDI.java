@@ -41,31 +41,34 @@ public class TelaPrincipalSDI extends javax.swing.JFrame {
         setTitle("Tela Principal");
 
         jLabel_Sistema_De_Cadastro.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel_Sistema_De_Cadastro.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel_Sistema_De_Cadastro.setText("SISTEMA DE CADASTRO ");
 
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Selecione uma opção no menu");
+        jLabel1.setToolTipText("");
 
         javax.swing.GroupLayout jPanel_TelaPrincipalLayout = new javax.swing.GroupLayout(jPanel_TelaPrincipal);
         jPanel_TelaPrincipal.setLayout(jPanel_TelaPrincipalLayout);
         jPanel_TelaPrincipalLayout.setHorizontalGroup(
             jPanel_TelaPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel_TelaPrincipalLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(59, Short.MAX_VALUE)
                 .addComponent(jLabel_Sistema_De_Cadastro)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel_TelaPrincipalLayout.createSequentialGroup()
-                .addContainerGap(115, Short.MAX_VALUE)
+                .addContainerGap(59, Short.MAX_VALUE))
+            .addGroup(jPanel_TelaPrincipalLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addContainerGap(120, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel_TelaPrincipalLayout.setVerticalGroup(
             jPanel_TelaPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel_TelaPrincipalLayout.createSequentialGroup()
-                .addGap(42, 42, 42)
+                .addContainerGap(42, Short.MAX_VALUE)
                 .addComponent(jLabel_Sistema_De_Cadastro)
-                .addGap(54, 54, 54)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addContainerGap(134, Short.MAX_VALUE))
+                .addContainerGap(141, Short.MAX_VALUE))
         );
 
         jMenu_Arquivo.setText("Arquivo");
@@ -110,13 +113,8 @@ public class TelaPrincipalSDI extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem_Novo_Cadastro_ActionPerformed
 
     private void jMenu_SobreMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu_SobreMouseClicked
-        /* Tela sobre deve ser criada aq
         TelaSobreSDI telaSobre = new TelaSobreSDI();
-        getContentPane().removeAll();
-        getContentPane().setLayout(new java.awt.BorderLayout());
-        getContentPane().add(telaSobre, java.awt.BorderLayout.CENTER); 
-        revalidate();
-        repaint();*/
+        telaSobre.setVisible(true);
     }//GEN-LAST:event_jMenu_SobreMouseClicked
 
     private void jMenuItem_ConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem_ConsultarActionPerformed
