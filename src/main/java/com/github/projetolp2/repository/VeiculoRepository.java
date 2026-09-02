@@ -70,6 +70,9 @@ public class VeiculoRepository implements IPersistencia<Veiculo> {
             case "codigo":
                 sql = "SELECT * FROM veiculo WHERE codigo = ?";
                 break;
+            case "todos":
+                sql = "SELECT * FROM veiculo ORDER BY codigo";
+                break;
             default:
                 throw new IllegalArgumentException("Critério de busca inválido: " + criterio);
         }
@@ -80,7 +83,7 @@ public class VeiculoRepository implements IPersistencia<Veiculo> {
             //Verificando se é pra buscar por codigo
             if (buscaPorCodigo) {
                 stmt.setInt(1, Integer.parseInt(termo.trim()));
-            } else {
+            } else if (!criterio.equals("todos")){
                 //Se tiver vazio foi pq não digitou nada
                 if(termo.isBlank()) {
                     //Para a execução do try e ja vai retornar a lista vazia

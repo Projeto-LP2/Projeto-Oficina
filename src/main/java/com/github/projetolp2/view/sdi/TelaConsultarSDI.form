@@ -186,6 +186,12 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="jTextField_Pesquisa">
+          <Properties>
+            <Property name="toolTipText" type="java.lang.String" value="Deixe em branco para listar todos os ve&#xed;culos"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField_PesquisaActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

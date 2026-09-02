@@ -50,13 +50,13 @@ public class TelaPrincipalSDI extends javax.swing.JFrame {
         jPanel_TelaPrincipalLayout.setHorizontalGroup(
             jPanel_TelaPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel_TelaPrincipalLayout.createSequentialGroup()
-                .addGap(62, 62, 62)
-                .addComponent(jLabel_Sistema_De_Cadastro)
-                .addContainerGap(57, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel_TelaPrincipalLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel_Sistema_De_Cadastro)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel_TelaPrincipalLayout.createSequentialGroup()
+                .addContainerGap(115, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addGap(115, 115, 115))
+                .addContainerGap(120, Short.MAX_VALUE))
         );
         jPanel_TelaPrincipalLayout.setVerticalGroup(
             jPanel_TelaPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

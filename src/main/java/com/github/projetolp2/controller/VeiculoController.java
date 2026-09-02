@@ -18,16 +18,45 @@ public class VeiculoController {
 
     //Verificaçao para cadstro
     public ResultadoOperacao cadastrar(Veiculo veiculo) {
+
         if (veiculo.getPlaca() == null || veiculo.getPlaca().isBlank()) {
             return new ResultadoOperacao(false, "Placa é obrigatória.");
+        }
+        if (veiculo.getPlaca().length() > 10) {
+            return new ResultadoOperacao(false, "Placa deve ter no máximo 10 caracteres.");
+        }
+
+        if (veiculo.getModelo() == null || veiculo.getModelo().isBlank()) {
+            return new ResultadoOperacao(false, "Modelo é obrigatório.");
+        }
+        if (veiculo.getModelo().length() > 50) {
+            return new ResultadoOperacao(false, "Modelo deve ter no máximo 50 caracteres.");
+        }
+
+        if (veiculo.getMarca() == null || veiculo.getMarca().isBlank()) {
+            return new ResultadoOperacao(false, "Marca é obrigatória.");
+        }
+        if (veiculo.getMarca().length() > 50) {
+            return new ResultadoOperacao(false, "Marca deve ter no máximo 50 caracteres.");
         }
 
         if (veiculo.getAno() < 1950 || veiculo.getAno() > 2027) {
             return new ResultadoOperacao(false, "Ano inválido.");
         }
 
-        if (veiculo.getDescricaoServico().length() > 255) {
-            return new ResultadoOperacao(false, "Descrição muito longa.");
+        if (veiculo.getProprietario() == null || veiculo.getProprietario().isBlank()) {
+            return new ResultadoOperacao(false, "Proprietário é obrigatório.");
+        }
+        if (veiculo.getProprietario().length() > 100) {
+            return new ResultadoOperacao(false, "Proprietário deve ter no máximo 100 caracteres.");
+        }
+
+        if (veiculo.getTelefoneProprietario() == null || veiculo.getTelefoneProprietario().isBlank()) {
+            return new ResultadoOperacao(false, "Telefone é obrigatório.");
+        }
+        //Verifica se é número de 0 até 9, se tem "-" ou se tem "+"
+        if (!veiculo.getTelefoneProprietario().matches("[0-9()\\-\\s+]+")) {
+            return new ResultadoOperacao(false, "Telefone deve conter apenas números e símbolos válidos.");
         }
 
         boolean sucesso = repository.adicionar(veiculo);

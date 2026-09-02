@@ -6,6 +6,7 @@ package com.github.projetolp2.view.sdi;
 
 import com.github.projetolp2.controller.VeiculoController;
 import com.github.projetolp2.model.Veiculo;
+import java.awt.Color;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -19,7 +20,7 @@ public class TelaConsultarSDI extends javax.swing.JFrame {
     private final VeiculoController controller = new VeiculoController();
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(TelaConsultarSDI.class.getName());
-
+    
     /**
      * Creates new form TelaConsultarSDI
      */
@@ -27,6 +28,7 @@ public class TelaConsultarSDI extends javax.swing.JFrame {
         initComponents();
         configurarTabela();
         configurarSelecaoTabela();
+        configurarPlaceholder();
     }
 
     /**
@@ -112,6 +114,9 @@ public class TelaConsultarSDI extends javax.swing.JFrame {
 
         jLabel_DigiteAqui.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel_DigiteAqui.setText("Digite aqui:");
+
+        jTextField_Pesquisa.setToolTipText("Deixe em branco para listar todos os veículos");
+        jTextField_Pesquisa.addActionListener(this::jTextField_PesquisaActionPerformed);
 
         javax.swing.GroupLayout jPanel_TermoLayout = new javax.swing.GroupLayout(jPanel_Termo);
         jPanel_Termo.setLayout(jPanel_TermoLayout);
@@ -256,12 +261,44 @@ public class TelaConsultarSDI extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+    
+    private void configurarPlaceholder() {
+    String placeholder = "Deixe em branco para listar todos";
 
+    jTextField_Pesquisa.setText(placeholder);
+    jTextField_Pesquisa.setForeground(Color.GRAY);
+
+    jTextField_Pesquisa.addFocusListener(new java.awt.event.FocusAdapter() {
+        @Override
+        public void focusGained(java.awt.event.FocusEvent evt) {
+            if (jTextField_Pesquisa.getText().equals(placeholder)) {
+                jTextField_Pesquisa.setText("");
+                jTextField_Pesquisa.setForeground(Color.BLACK);
+            }
+        }
+
+        @Override
+        public void focusLost(java.awt.event.FocusEvent evt) {
+            if (jTextField_Pesquisa.getText().isBlank()) {
+                jTextField_Pesquisa.setText(placeholder);
+                jTextField_Pesquisa.setForeground(Color.GRAY);
+            }
+        }
+    });
+}
+    
     private void jButton_PesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_PesquisarActionPerformed
         String termo = jTextField_Pesquisa.getText().trim();
         String criterio;
-
-        if (jRadioButton_Placa.isSelected()) {
+        
+        if (termo.equals("Deixe em branco para listar todos")) {
+            //Para permitir pesquisa "global"
+            termo = "";
+        }
+        
+        if (termo.isBlank()) {
+            criterio = "todos";
+        } else if (jRadioButton_Placa.isSelected()) {
             criterio = "placa";
         } else if (jRadioButton_Modelo.isSelected()) {
             criterio = "modelo";
@@ -351,6 +388,10 @@ public class TelaConsultarSDI extends javax.swing.JFrame {
         telaExcluir.setVisible(true);
     }//GEN-LAST:event_jButton_ExcluirActionPerformed
 
+    private void jTextField_PesquisaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField_PesquisaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField_PesquisaActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -403,7 +444,7 @@ public class TelaConsultarSDI extends javax.swing.JFrame {
             }
         });
     }
-
+     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup_Selecionar;
     private javax.swing.JButton jButton_Alterar;
