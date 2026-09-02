@@ -40,3 +40,14 @@ Projeto desenvolvido para a disciplina de **Linguagem de Programação II (LP2)*
 * **Cleyton Ferreira**
 * **Hitaro Ramos**
 * **Ricado Roque**
+
+## Configuração do Banco de Dados
+
+Para executar o sistema localmente, você deve configurar suas credenciais a partir do arquivo de modelo fornecido.
+
+Siga os passos abaixo:
+
+1. Navegue até o diretório `src/main/resources`.
+2. Localize o arquivo de template `application.properties.example`.
+3. Renomeie o arquivo (ou crie uma cópia) removendo o sufixo `.example`, deixando-o estritamente como `application.properties`.
+4. Abra o arquivo `application.properties` recém-criado e preencha as informações de acordo com as configurações do seu banco de dados PostgreSQL local (endereço, usuário e senha).
