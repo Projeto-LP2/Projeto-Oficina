@@ -1,0 +1,4 @@
+db.driver=org.postgresql.Driver
+db.endereco=jdbc:postgresql://localhost:5432/postgres
+db.usuario=postgres
+db.senha=123
