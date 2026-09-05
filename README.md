@@ -27,7 +27,8 @@ Projeto desenvolvido para a disciplina de **Linguagem de Programação II (LP2)*
 * Descrição
 
 ## Interface
-* **SDI** — utilizando `JFrame`
+* **SDI** - utilizando `JFrame`
+* **MDI** - utilizando `JInternalFrame`
 
 ## Tecnologias
 * Java
